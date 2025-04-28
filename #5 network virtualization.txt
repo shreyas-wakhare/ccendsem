@@ -1,0 +1,9 @@
+#5 network virtualization
+
+step1: ctrl+h add adapter and change it to 100
+step2: create 2 vms ubuntu1 and ubuntu2(change the NAT to host only)&select(adapter 2)
+step3: open terminal of vm1(run following):
+    1)ip addr show
+step4: open vm2 terminal:
+    1)ip addr show
+    2)ping (ip of vm1) -c 5

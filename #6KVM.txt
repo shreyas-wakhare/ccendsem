@@ -1,0 +1,39 @@
+#6KVM
+
+STEP 1) SET UP VIRTUAL MACHINE(UBUNTU)
+STEP 2) INSTALL IT AND SET USERNAME(shreyas) AND PASSWORD(shreyas) 
+STEP 3) AFTER INSTALLATION RESTART UBUNTU
+STEP 4) AFTER OPENING -> OPEN TERMINAL
+RUN FOLLOWING COMMANDS:
+
+1)sudo apt update && sudo apt upgrade -y 
+(after this it will show restart  now)
+(AFTER OPENING -> OPEN TERMINAL)
+
+2)sudo grep -c "svm\|vmx" /proc/cpuinfo
+
+3)kvm -ok 
+(kvm not found show)
+
+4)sudo apt install cpu-checker
+
+5)kvm -ok 
+(kvm not found show)
+
+6)sudo apt install qemu-kvm virt-manager libvirt-daemon-system libvirt-clients bridge-utils -y
+
+7)sudo systemctl enable libvirtd
+
+8)sudo systemctl enable start libvirtd
+
+9)sudo usermod -aG kvm shreyas
+
+10)sudo usermod -aG libvirt shreyas
+
+11)sudo systemctl status libvirtd
+(open vmm from apps)
+(restart ubuntu from power button)
+
+12)open vmm->click on create VM(left corner)->forward->browse->volumes->finish->choose volume->forward->untick automatic and search ubuntu 24.10->forward->memory:1024&cpu:1->forward->7.0gib->forward->finish
+
+13)kvm done

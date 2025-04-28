@@ -1,0 +1,10 @@
+#8 file transfer
+
+step1: create 2 vm's of ubuntu
+step2: open 1st vm->create a text file(text1.txt)
+step3: open terminal and run following command:
+    1)cd (path of text1.txt )
+    2)python3 -m http.server 9000
+
+step4: open 2nd vm 
+step5: open firefox search->http://(ip address of previous vm(wired icon)):9000

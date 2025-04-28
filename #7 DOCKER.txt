@@ -1,0 +1,41 @@
+#7 DOCKER
+
+STEP1: ENABLE KUBERNETES FROM DOCKER DESKTOP(SETTINGS)
+STEP2: OPEN VS CODE CREATE A FOLDER(random name)
+step3: copy each code in seprate file with same name &save it
+step4: go in cmd of step2 file
+step5: run commands on by one
+
+1)Dockerfile
+
+FROM python:3.9-slim
+WORKDIR /app
+COPY . /app
+RUN pip install -r requirements.txt
+EXPOSE 8999
+CMD ["python", "app.py"]
+
+2)app.py
+
+from flask import Flask
+app = Flask(__name__)
+@app.route('/')
+def default():
+    return 'Hello World!!'
+if __name__=='__main__':
+    app.run(host='0.0.0.0',port=8999,debug=True)
+
+3)requirements.txt
+
+flask
+
+4)commands to run in cmd:
+
+docker build -t flask-app .
+docker run -p 8999:8999 flask-app
+
+
+
+
+
+
